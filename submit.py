@@ -475,7 +475,7 @@ class Detector(object):
                                bbox_xyxy=tracker_outputs[:, :4],
                                identities=tracker_outputs[:, 5])
         # filter_pub_det(os.path.join(self.predict_path, f'{self.seq_num}.txt'),
-        #                 f'/data/Dataset/mot/MOT17/images/test/{self.seq_num}/det/det.txt')
+        #                 f'set/mot/MOT17/images/test/{self.seq_num}/det/det.txt')
         print("totally {} dts {} occlusion dts".format(total_dts, total_occlusion_dts))
 
 
@@ -530,7 +530,7 @@ if __name__ == '__main__':
         shutil.copyfile(os.path.join(predict_path, '{}-{}-SDP.txt'.format(u,v)),os.path.join(predict_path,f'{repeated_seq_nums_i}.txt'))
 
     sub_dir = 'MOT17/images/train'
-    seq_nums = os.listdir('/data/Dataset/mot/MOT17/images/train')
+    seq_nums = os.listdir('/home/sylee/Dataset/MOT17/images/train')
     accs = []
     seqs = []
     for seq_num in seq_nums:

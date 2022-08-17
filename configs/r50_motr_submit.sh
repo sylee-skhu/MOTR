@@ -28,6 +28,7 @@ python3 submit.py \
     --fp_ratio 0.3 \
     --query_interaction_layer 'QIM' \
     --extra_track_attn \
+    --mot_path /home/sylee/Dataset \
     --data_txt_path_train ./datasets/data_path/joint.train \
     --data_txt_path_val ./datasets/data_path/mot17.train \
     --resume ${EXP_DIR}/motr_final.pth \

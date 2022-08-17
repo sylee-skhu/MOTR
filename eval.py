@@ -268,8 +268,8 @@ class Detector(object):
         self.detr = model
 
         self.seq_num = seq_num
-        img_list = os.listdir(os.path.join(self.args.mot_path, 'MOT15/images/train', self.seq_num, 'img1'))
-        img_list = [os.path.join(self.args.mot_path, 'MOT15/images/train', self.seq_num, 'img1', _) for _ in img_list if
+        img_list = os.listdir(os.path.join(self.args.mot_path, 'MOT17/images/test', self.seq_num, 'img1'))
+        img_list = [os.path.join(self.args.mot_path, 'MOT17/images/test', self.seq_num, 'img1', _) for _ in img_list if
                     ('jpg' in _) or ('png' in _)]
 
         self.img_list = sorted(img_list)
@@ -410,8 +410,15 @@ if __name__ == '__main__':
     detr = detr.cuda()
     detr.eval()
 
-    seq_nums = ['ADL-Rundle-6', 'ETH-Bahnhof', 'KITTI-13', 'PETS09-S2L1', 'TUD-Stadtmitte', 'ADL-Rundle-8', 'KITTI-17',
-                'ETH-Pedcross2', 'ETH-Sunnyday', 'TUD-Campus', 'Venice-2']
+    # seq_nums = ['ADL-Rundle-6', 'ETH-Bahnhof', 'KITTI-13', 'PETS09-S2L1', 'TUD-Stadtmitte', 'ADL-Rundle-8', 'KITTI-17',
+    #             'ETH-Pedcross2', 'ETH-Sunnyday', 'TUD-Campus', 'Venice-2']
+    seq_nums = ['MOT17-01-SDP',
+                'MOT17-03-SDP',
+                'MOT17-06-SDP',
+                'MOT17-07-SDP',
+                'MOT17-08-SDP',
+                'MOT17-12-SDP',
+                'MOT17-14-SDP']
     accs = []
     seqs = []
 
